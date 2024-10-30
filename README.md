@@ -22,3 +22,4 @@ The workshop is broken down into modules, with each module representing a specif
 
 * [Reliable Web App Pattern Code Repository](https://aka.ms/eap/rwa/dotnet)
 * [Azure Architecture Guidance](https://learn.microsoft.com/azure/architecture/reference-architectures/reliable-web-app/dotnet/pattern-overview)
+
