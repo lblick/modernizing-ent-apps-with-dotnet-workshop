@@ -7,16 +7,16 @@ The workshop is broken down into modules, with each module representing a specif
 
 ## Agenda
 
-* [Part 1](./Part%202%20-%20Modernization%20Overview/ModernizationOverview.md) - Modernization Overview (45 minutes)
-* [Part 2](./Part%201%20-%20Required%20Tooling/RequiredTooling.md) - Tooling and setting up your development environment (45 minutes)
+* [Module 1](./Module%201%20-%20Modernization%20Overview/ModernizationOverview.md) - Modernization Overview (45 minutes)
+* [Module 2](./Module%202%20-%20Required%20Tooling/RequiredTooling.md) - Required tooling and setting up your development environment (45 minutes)
 * Break (15 minutes)
-* [Part 3](./Part%203%20-%20Build%20Modern%20Apps/BuildApps.md) - Build Modern Apps (60 minutes)
+* [Module 3](./Module%203%20-%20Building%20Modern%20Apps/BuildApps.md) - Building Modern Apps (60 minutes)
 * Lunch Break (60 minutes)
-* [Part 4](./Part%204%20-%20Deploy%20Azure%20Services/DeployAzure.md) - Deploy Azure Services (45 minutes)
-* [Part 5](./Part%205%20-%20Connect%20App%20to%20Azure%20Database/ConnectApp.md) - Connect App to Azure Database (45 minutes)
+* [Module 4](./Module%204%20-%20Deploy%20Azure%20Services/DeployAzure.md) - Deploy Azure Services (45 minutes)
+* [Module 5](./Module%205%20-%20Connect%20App%20to%20Azure%20Database/ConnectApp.md) - Connect App to Azure Database (45 minutes)
 * Break (15 minutes)
-* [Part 6](./Part%206%20-%20Deploy%20App%20to%20Azure/DeployApp.md) - Deploy App to Azure (45 minutes)
-* [Part 7](./Part%207%20-%20Workshop%20Closeout/WorkshopCloseout.md) - Workshop Closeout (15 minutes)
+* [Module 6](./Module%206%20-%20Deploy%20App%20to%20Azure/DeployApp.md) - Deploy App to Azure (45 minutes)
+* [Module 7](./Module%207%20-%20Workshop%20Closeout/WorkshopCloseout.md) - Workshop Closeout (15 minutes)
 
 ## More Links and Resources
 
