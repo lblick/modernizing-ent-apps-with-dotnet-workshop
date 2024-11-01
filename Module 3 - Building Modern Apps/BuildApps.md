@@ -1,3 +1,4 @@
+#
 # Module 3 - Building a Modern .NET Web App
 This lab will walk through the steps for building a modern ASP.NET Core web app using Razor pages and C#. The app will access a SQL database using Entity Framework (EF), an object-relational mapper that enables .NET developers to work with relational data using domain-specific objects.
 

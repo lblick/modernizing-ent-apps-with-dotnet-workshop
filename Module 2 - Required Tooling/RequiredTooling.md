@@ -1,4 +1,5 @@
-# Module 1 - Required Tooling
+#
+# Module 2 - Required Tooling
 Before we start the workshop, there are 3 things we need to set up.
 
 - [Local development tooling](#local-development-tooling)
