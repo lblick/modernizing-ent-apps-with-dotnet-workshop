@@ -10,12 +10,13 @@ This lab will walk through the steps for building a modern ASP.NET Core web app 
 ## Sample App
 The app built in these labs is a basic university web site. Users can view and update student, course, and instructor information. Here are a few of the screens created in the tutorial.
 
-The student index page.
+* Student index page
 
-![An example of a students index page.](./images/students-index30.png)
+![Example students index page](./images/students-index30.png)
 
-The student edit page.
-![An example of a student edit page.](./images/student-edit30.png)
+* Student edit page
+
+![Example student edit page](./images/student-edit30.png)
 
 The UI style of this site is based on the built-in project templates. The tutorial's focus is on how to use EF Core with ASP.NET Core, not how to customize the UI.
 
