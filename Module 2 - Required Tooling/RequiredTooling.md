@@ -19,6 +19,7 @@ We will install the following local tools:
 - [Azure CLI Bicep extension (0.30.00 or above)](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/install#azure-cli)
 - [Azure Developer CLI (latest)](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd)
 - [Visual Studio Code 1.90 (or above)](https://code.visualstudio.com/)
+- [SQLite local database engine](https://sqlite.org/download.html)
 
 ## Setup the Git repo
 We will each need a copy of the Git repo. This repo will have the instructions for completing each module and well as the source code for each of your .NET projects.
