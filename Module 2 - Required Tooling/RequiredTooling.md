@@ -1,12 +1,12 @@
 #
 # Module 2 - Required Tooling
-Before we start the workshop, there are 3 things we need to set up.
+Before we start, there are 3 tasks we need to complete in order to complete the workshop:
 
+- [Install local development tooling](#install-local-development-tooling)
 - [Setup the Git Repo](#setup-the-git-repo)
-- [Local development tooling](#local-development-tooling)
 - [Authenticate development tooling with Azure](#authenticate-development-tooling-with-azure)
 
-## Local development tooling
+## Install local development tooling
 
 To complete the workshop, development tools that are installed locally on our laptops or desktop computers will be required.
 
@@ -21,6 +21,8 @@ We will install the following local tools:
 - [Visual Studio Code 1.90 (or above)](https://code.visualstudio.com/)
 
 ## Setup the Git repo
+We will each need a copy of the Git repo. This repo will have the instructions for completing each module and well as the source code for each of your .NET projects.
+
 ### Create a GitHub account
 If necessary, create a GitHub account using your workshop credentials.
 
