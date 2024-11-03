@@ -3,8 +3,8 @@
 This lab will walk through the steps for building a modern ASP.NET Core web app using Razor pages and C#. The app will access a SQL database using Entity Framework (EF), an object-relational mapper that enables .NET developers to work with relational data using domain-specific objects.
 
 ## Prerequisites
-- Visual Studio 2022 with the ASP.NET and web development workload.
-- .NET 6.0 or Higher SDK
+- Visual Studio Code with the ASP.NET and web development workload.
+- .NET 8.0 or Higher SDK
 - SQLite Database engine
 
 ## Sample App
@@ -21,13 +21,16 @@ The app built in these labs is a basic university web site. Users can view and u
 The UI style of this site is based on the built-in project templates. The tutorial's focus is on how to use EF Core with ASP.NET Core, not how to customize the UI.
 
 ### Create the web app project
-1. Launch Visual Studio.
-2. In the start window under **Getting Started**, click on **Create a new project**.
-2. In the Create a new project dialog, select ASP.NET Core Web App (Razor Pages), and then select Next.
-3. In the Configure your new project dialog, enter ContosoUniversity for Project name. It's important to name the project ContosoUniversity, including matching the capitalization, so the namespaces will match when you copy and paste example code.
-4. Select the directory folder you want the project to created in.
-4. Select Next.
-5. In the Additional information dialog, select .NET 8.0 (Long Term Support) and then select Create.
+1. Launch Visual Studio Code.
+2. Click **File -> Open Folder...** to open the folder of your local repo created in the previous module.
+3. Press **F1** on your keyboard to open the VSCode command pallette.
+4. Select **.NET: New Project**.
+5. In the command pallette, select ASP.NET Core Web App (Razor Pages).
+6. Change the name of the app to **ContosoUniversity** and press **Enter**. It is important to name the project ContosoUniversity, including matching the capitalization, so the namespaces will match when you copy and paste example code.
+7. Select **Choose another directory...**.
+8. Select the **./apps** folder and click **OK**.
+9. Select **Show template options...**.
+10. For the **Framework** option, select .NET 8.0 (Long Term Support) and then select **Create project**.
 
 ### Set up the Site Style
 1. Copy and paste the following code into the Pages/Shared/_Layout.cshtml file:
