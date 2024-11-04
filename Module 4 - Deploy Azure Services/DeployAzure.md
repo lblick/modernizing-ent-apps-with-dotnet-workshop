@@ -56,12 +56,95 @@ You can create an app on Azure with Azure Web App without having to deal with th
 - **Monitoring and diagnostics**: Azure Web App provide real-time monitoring and diagnostics to help you troubleshoot and optimize your application's performance. 
 - **Built-In Availability**: Azure Web Apps have built-in availability, so even if one of the Azure servers goes down, your app will continue to function normally. As a result, you won't have to worry about keeping your servers up, and your users will always have a wonderful experience. 
 - **Serverless Code: You can launch your app with Azure Web Apps without having to worry about setting up or managing servers because serverless programming is supported. Azure Web Apps are the ideal platform for serverless code because of worry-free scaling and built-in availability. 
- 
-### Deploying Azure App Service
-We will create a script that deploys an Azure App Service. Before we do, we will discuss a sample architecture for a .NET app, as show below.
+
+### Azure SQL Database
+Azure SQL Database is a fully managed cloud database that is always running on the latest stable version of the SQL Server database engine and patched OS with 99.99% availability. Azure SQL also has PaaS capabilities built in to enable you to focus on the domain-specific database administration and optimization activities that are critical for your business. With Azure SQL Database, you can create a highly available and high-performance data storage layer for the applications and solutions in Azure. SQL Database can be the right choice for a variety of modern cloud applications because it enables you to process both relational data and nonrelational structures, such as graphs, JSON, spatial, and XML.
+
+Azure SQL Database is based on the latest stable version of the Microsoft SQL Server database engine. You can use advanced query processing features, such as high-performance in-memory technologies and intelligent query processing. In fact, the newest capabilities of SQL Server are released first to Azure SQL Database, and then to SQL Server itself. You get the newest SQL Server capabilities with no overhead for patching or upgrading, tested across millions of databases.
+
+#### Understanding Azure SQL Database
+Azure SQL is an intelligent, fully scalable database that can meet the needs of most, if not all, datbase solutions.Some key features of Azure SQL Database are:
+- You can provision Azure SQL in a variety of configurations, such as Single Database, Elastic Pools, Logical Server, In-Memory, and Serverless
+- Fully compatible with on-premise Microsoft SQL Server
+- Buillt-in security features such as advanced threat detection, network security controls and database security controls. 
+- Zero administration of the Azure SQL database server, underlying virtual servers, and security patching
+
+### Deploying Azure Services
+We will create a script that deploys an Azure App Service and Azure SQL database. Before we do, we will discuss a sample architecture for a .NET app, as show below.
 
 ![Azure App Service architecture](./images/app-service-architecture.png)
 
 #### Creating a deployment script
 Deployment scripts can be written using a number of tools such as Terraform, Bicep, PowerShell, and Bash. For this exercise, we will write a script using PowerShell, as follows:
-1. In Visual Studio
+1. In Visual Studio Code, create a new PowerShell file named **deploy.ps1** in the project **infra** folder
+1. Open the file and add the following PowerShell code:
+
+```powershell
+#
+# Create an App Service app with deployment from GitHub
+#
+# This sample script creates an app in App Service with its related resources,
+# and then sets up continuous deployment from a GitHub repository. For GitHub 
+# deployment without continuous deployment, see Create an app and deploy code
+# from GitHub. 
+#
+# For this sample, you need:
+# - A GitHub repository with application code, that you have administrative 
+#   permissions for. To get automatic builds, structure your repository 
+#   according to the Prepare your repository table.
+# - A Personal Access Token (PAT) for your GitHub account.
+#
+
+# General variables
+$randomId=Get-Random -Minimum 10000 -Maximum 99999
+$location="East US"
+$tenant="697ef739-95d1-4bdb-8713-18ca3377dab3"
+$subscription="2e5232f8-03a1-4529-9c05-7a67f074b553"
+$resourceGroup="rg-modernize-ent-apps-$randomId"
+$tag="modernize-ent-apps-dotnet"
+
+# App Service variables
+$gitrepo="https://github.com/lblick/modernizing-ent-apps-with-dotnet-workshop" # Replace the following URL with your own public GitHub repo URL if you have one
+$appServicePlan="asp-modernize-ent-apps-$randomId"
+$webapp="wa-modernize-ent-apps-$randomId"
+
+# Azure SQL variables
+$sqlServerName="asql-modernize-ent-apps-$randomId"
+$sqlAdminUserName="sqladmin"
+$sqlAdminPassword="sql@dminP@ss"
+$sqlDatabaseName="db-modernize-ent-apps"
+$sqlEdition="Standard"
+$sqlServiceObjective="S1"
+
+# Login to Azure and select the subscription
+az login --tenant $tenant --use-device-code
+az account set --subscription $subscription
+
+# Create a resource group.
+Write-Host "Creating $resourceGroup in "$location"..."
+az group create --name $resourceGroup --location "$location" --tag $tag
+
+# Create an App Service plan in `FREE` tier.
+Write-Host "Creating $appServicePlan..."
+az appservice plan create --name $appServicePlan --resource-group $resourceGroup --sku FREE
+
+# Create a web app.
+Write-Host "Creating $webapp..."
+az webapp create --name $webapp --resource-group $resourceGroup --plan $appServicePlan
+
+# Deploy code from a public GitHub repository. 
+az webapp deployment source config --name $webapp --resource-group $resourceGroup --repo-url $gitrepo --branch main --manual-integration
+
+# Use curl to see the web app.
+$site="http://$webapp.azurewebsites.net"
+Write-Host $site
+curl "$site" # Optionally, copy and paste the output of the previous command into a browser to see the web app
+
+# Create Azure SQL server
+az sql server create --name $sqlServerName --location $location --resource-group $resourceGroup --admin-user $sqlAdminUserName --admin-password $sqlAdminPassword
+
+# Create Azure SQL database
+az sql db create --resource-group $resourceGroup --server $sqlServerName --name $sqlDatabaseName --edition $sqlEdition --service-objective $sqlServiceObjective
+```
+1. Open a PowerShell terminal prompt in Visual Studio Code
+1.  
