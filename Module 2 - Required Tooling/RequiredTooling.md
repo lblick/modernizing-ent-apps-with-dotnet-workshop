@@ -18,6 +18,7 @@ We will install the following local tools:
 - [Azure CLI (2.62.0 or above)](https://docs.microsoft.com/cli/azure/install-azure-cli)
 - [Azure CLI Bicep extension (0.30.00 or above)](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/install#azure-cli)
 - [Azure Developer CLI (latest)](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd)
+- [Visual Studio 2019 (or above)](https://visualstudio.microsoft.com)
 - [Visual Studio Code 1.90 (or above)](https://code.visualstudio.com/)
 - [SQLite local database engine](https://sqlite.org/download.html)
 
@@ -69,6 +70,15 @@ cd "modernizing-ent-apps-with-dotnet-workshop"
 ## Authenticate development tooling with Azure
 
 Before we can start developing, we need to authenticate all of the developer tooling with Azure.
+
+### Sign in to Azure from Visual Studio
+
+1. Open Visual Studio
+2. Click **Continue without code**
+3. Select **File -> Account Settings...**
+4. Click **Add...**
+5. Select **GitHub**
+6. Enter your credentials and submit
 
 ### Sign in to Azure from Visual Studio Code
 

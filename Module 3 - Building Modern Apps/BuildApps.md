@@ -3,7 +3,7 @@
 This lab will walk through the steps for building a modern ASP.NET Core web app using Razor pages and C#. The app will access a SQL database using Entity Framework (EF), an object-relational mapper that enables .NET developers to work with relational data using domain-specific objects.
 
 ## Prerequisites
-- Visual Studio Code with the ASP.NET and web development workload.
+- Visual Studio 2022 or above with the ASP.NET and web development workload.
 - .NET 8.0 or Higher SDK
 - SQLite Database engine
 
@@ -21,16 +21,15 @@ The app built in these labs is a basic university web site. Users can view and u
 The UI style of this site is based on the built-in project templates. The tutorial's focus is on how to use EF Core with ASP.NET Core, not how to customize the UI.
 
 ### Create the web app project
-1. Launch Visual Studio Code.
-2. Click **File -> Open Folder...** to open the folder of your local repo created in the previous module.
-3. Press **F1** on your keyboard to open the VSCode command pallette.
-4. Select **.NET: New Project**.
-5. In the command pallette, select ASP.NET Core Web App (Razor Pages).
-6. Change the name of the app to **ContosoUniversity** and press **Enter**. It is important to name the project ContosoUniversity, including matching the capitalization, so the namespaces will match when you copy and paste example code.
-7. Select **Choose another directory...**.
-8. Select the **./apps** folder and click **OK**.
-9. Select **Show template options...**.
-10. For the **Framework** option, select .NET 8.0 (Long Term Support) and then select **Create project**.
+1. Launch Visual Studio
+1. Click **Create a new project** to open the project in your local repo created in the previous module
+1. Select **ASP.NET Core Web App (Razor Pages)** and click **Next**
+1. Change the name of the app to **ContosoUniversity**. It is important to name the project ContosoUniversity, including matching the capitalization, so the namespaces will match when you copy and paste example code.
+1. Click the ellipses **(...)* next to Location
+1. Navigate to the apps folder in your local repo and click **Select Folder**
+1. Confirm the location path is **.\modernizing-ent-apps-with-dotnet-workshop\apps\\**
+1. Confirm the Framework is **.NET 8.0 (Long Term Support)**
+1. Click **Create** to create the project
 
 ### Set up the Site Style
 1. Copy and paste the following code into the Pages/Shared/_Layout.cshtml file:
@@ -159,16 +158,16 @@ The preceding code replaces the text about ASP.NET Core with text about this app
 The following sections create a data model for the application.
 
 #### Course Enrollment Entity
-![Course-Enrollment-Student data model diagram](/assets/images/data-model-diagram.png)
+![Course-Enrollment-Student data model diagram](./images/data-model-diagram.png)
 
 A student can enroll in any number of courses, and a course can have any number of students enrolled in it.
 
 #### Student Entity
 
-![Student entity diagram](/assets/images/student-entity.png)
+![Student entity diagram](./images/student-entity.png)
 
-1. Create a Models folder in the project folder.
-2. Create Models/Student.cs with the following code:
+1. Create a Models folder in the ContosoUniversity project folder.
+2. Create the Models/Student.cs source code file by right-clicking the Models folder and selecting **New File...**. Name the file Student.cs and press **Enter**. Add the following code to the file and save the file:
 
 ```C#
 namespace ContosoUniversity.Models
