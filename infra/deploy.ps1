@@ -15,7 +15,7 @@
 
 # General variables
 $randomId=Get-Random -Minimum 10000 -Maximum 99999
-$location="East US"
+$location="East US 2"
 $tenant="697ef739-95d1-4bdb-8713-18ca3377dab3"
 $subscription="2e5232f8-03a1-4529-9c05-7a67f074b553"
 $resourceGroup="rg-modernize-ent-apps-$randomId"
